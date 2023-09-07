@@ -1,0 +1,7 @@
+[requires]
+glad/0.1.36
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
