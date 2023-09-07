@@ -1,33 +1,8 @@
+// начальный файл
+
 #include "glad/glad.h"
 #include <GLFW/glfw3.h>
 #include <iostream>
-
-void sqPoint()
-{
-    glEnable(GL_POINT_SMOOTH);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glPointSize(10);
-    glBegin(GL_POINTS);
-        glColor3f(0, 0, 0);
-        glVertex2f(0.5, 0.5);
-        glVertex2f(-0.5, 0.5);
-    glEnd();
-    glDisable(GL_POINT_SMOOTH);
-    glDisable(GL_BLEND);
-}
-
-void roundPoint()
-{
-    glEnable(GL_POINTS);
-    glPointSize(10);
-    glBegin(GL_POINTS);
-        glColor3f(0, 1, 0);
-        glVertex2f(-0.5, -0.5);
-        glVertex2f(0.5, -0.5);
-    glEnd();
-    glDisable(GL_POINTS);
-}
 
 int main(void)
 {
@@ -61,8 +36,12 @@ int main(void)
         glClearColor(0.7f,1.0f,0.7f,0.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        sqPoint();
-        roundPoint();
+        glPointSize(10);
+        glBegin(GL_POINTS);
+            glColor3f(0, 0, 0);
+            glVertex2f(0.5, 0.5);
+            glVertex2f(-0.5, 0.5);
+        glEnd();
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
